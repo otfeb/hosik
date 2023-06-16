@@ -1,0 +1,17 @@
+package day0616;
+
+public class ParseIntArgs_03 {
+
+	public static void main(String[] args) {
+
+		System.out.println("내 이름은 " + args[0]);
+		System.out.println("자바점수는 " + args[1]);
+		System.out.println("오라클점수는 " + args[2]);
+		int a = Integer.parseInt(args[1]);
+		int b = Integer.parseInt(args[2]);
+		int c = a + b;
+		System.out.println("두과목의 합계는 " + c + " 입니다");
+		
+	}
+	
+}

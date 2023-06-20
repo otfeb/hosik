@@ -1,0 +1,34 @@
+package beakjoon;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class bj_10807 {
+
+	public static void main(String[] args) {
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(null))
+		
+		int i;
+		int j;
+		int v;
+		int same = 0;
+		int n = scanner.nextInt();
+		int[] arr = new int[n];
+		
+		for(i=0; i<n; i++) {
+			arr[i] = scanner.nextInt();
+		}
+		
+		v =scanner.nextInt();
+		
+		for(j=0; j<n; j++) {
+			if(arr[j]==v) {
+			same++;
+			}
+		}
+		System.out.println(same);
+		
+	}
+
+}

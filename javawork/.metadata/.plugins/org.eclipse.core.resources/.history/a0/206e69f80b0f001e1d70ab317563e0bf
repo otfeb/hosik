@@ -1,0 +1,16 @@
+package day0620;
+
+import java.util.Scanner;
+
+public class IfMaxNum_04 {
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		int a,b,c = scanner.nextInt();
+		
+		
+		
+	}
+
+}

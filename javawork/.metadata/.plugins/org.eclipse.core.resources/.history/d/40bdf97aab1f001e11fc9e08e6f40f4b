@@ -1,0 +1,9 @@
+package dbtest;
+
+public class PrepareMyShop {
+
+	public static void main(String[] args) {
+
+	}
+
+}

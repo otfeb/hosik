@@ -1,0 +1,9 @@
+package dbtest;
+
+public class CRUDTest {
+
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -1,0 +1,111 @@
+package day0710;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class OracleConnectTest {
+	
+	static final String URL="jdbc:oracle:thin:@localhost:1521:XE";
+	
+	public void connectSawon() {
+		
+		Connection conn=null;	//자바와 오라클 연결
+		Statement stmt=null;	//sql문 전달
+		ResultSet rs=null;		//출력문을 읽어옴
+		
+		String sql="select * from sawon order by name";
+		
+		try {
+			conn=DriverManager.getConnection(URL, "angel", "a1234");
+			System.out.println("오라클 서버 연결 성공");
+			
+			stmt=conn.createStatement();
+			rs=stmt.executeQuery(sql);
+			
+			while(rs.next()) {		//true값 반환, 데이터 없으면 false
+				//db로부터 데이터 가져오기
+				int num=rs.getInt("num");	//컬럼명 or 열번호
+				String name=rs.getNString("name");
+				String gender=rs.getString("gender");
+				String buseo=rs.getString("buseo");
+				int pay=rs.getInt("pay");
+				
+				System.out.println(num+"\t"+name+"\t"+gender+"\t"+buseo+"\t"+pay);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("오라클 서버 연결 실패!!"+e.getMessage());
+		}
+		finally {
+			try {
+				if(rs!=null) rs.close();
+				if(stmt!=null) stmt.close();
+				if(conn!=null) conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void connectBamin() {
+		//주문번호 주문자 음식명 가격 상호명 가게위치 주문자주소
+		Connection conn=null;
+		Statement stmt=null;
+		ResultSet rs=null;
+		
+		String sql="select f.fno ,j.name ,f.foodname ,price ,shopname ,loc ,addr \r\n"
+				+ " from food f,jumun j\r\n where f.fno=j.fno order by j.name;";
+		
+		try {
+			conn=DriverManager.getConnection(URL, "angel", "a1234");
+			System.out.println("오라클 서버 연결 성공");
+			
+			stmt=conn.createStatement();
+			rs=stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				int fno=rs.getInt("f.fno");
+				String name=rs.getString("j.name");
+				String foodname=rs.getString("f.foodname");
+				int price=rs.getInt("price");
+				String shopname=rs.getString("shopname");
+				String loc=rs.getString("loc");
+				String addr=rs.getString("addr");
+				
+				System.out.println(fno+"\t"+name+"\t"+foodname+"\t"+price+"\t"+shopname+"\t"+loc+"\t"+addr);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("오라클 서버 연결 실패!!"+e.getMessage());
+		}
+		finally {
+			try {
+				if(rs!=null) rs.close();
+				if(stmt!=null) stmt.close();
+				if(conn!=null) conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
+
+	public static void main(String[] args) {
+		
+		//OracleConnectTest oc = new OracleConnectTest();
+		//oc.connectSawon();
+		
+		OracleConnectTest oc = new OracleConnectTest();
+		oc.connectBamin();
+	}
+
+}

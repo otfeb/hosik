@@ -1,9 +1,0 @@
-package dbtest;
-
-public class PrepareMyStudent {
-
-	public static void main(String[] args) {
-
-	}
-
-}

@@ -11,7 +11,7 @@ public class bj_1110 {
 		int n = scanner.nextInt();
 		
 		int ill = n%10;
-		int ship = n%100/10;
+		int ship = n%100/10; 
 		int sum = 0;
 		int cnt = 0;
 		

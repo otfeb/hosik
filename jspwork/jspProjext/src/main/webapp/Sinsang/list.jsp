@@ -40,7 +40,7 @@ Vector<SinsangDto> list=dao.getAllDates();
 			<td><%=dto.getAddr() %></td>
 			<td><%=dto.getSdate() %></td>
 			<td>
-				<button type="button" class="btn btn-info btn-sm" onclick="location.href=''">수정</button>
+				<button type="button" class="btn btn-info btn-sm" onclick="location.href='updateForm.jsp?num=<%=dto.getNum()%>'">수정</button>
 				<button type="button" class="btn btn-danger btn-sm" onclick="location.href='delete.jsp?num=<%=dto.getNum()%>'">삭제</button>
 			</td>
 		</tr>

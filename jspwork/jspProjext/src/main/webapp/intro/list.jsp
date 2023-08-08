@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="model.intro.introDto"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.intro.introDao"%>
@@ -36,9 +37,29 @@
 	</tr>
 	
 	<%
-	if(list.size()==0){%>
-		
+	if(list.size()==0){%>	<%-- insert아무것도 안했을 경우 --%>
+		<tr>
+			<td colspan="7" align="center">
+				<h5>등록된 정보가 없습니다</h5>
+			</td>
+		</tr>
 	<%}
+	else{
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH시");
+		
+		for(int i=0;i<list.size();i++){
+			introDto dto=list.get(i);
+			%>
+			
+			<tr>
+				<td align="center"><%=(i+1) %></td>
+				<td>
+					
+				</td>
+			</tr>
+			
+		<%}
+	}
 	%>
 </div>
 </body>

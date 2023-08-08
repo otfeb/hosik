@@ -1,12 +1,14 @@
 package db.memo;
 
+import java.sql.Timestamp;
+
 public class memoDto {
 
 	private String num;
 	private String writer;
 	private String story;
 	private String avata;
-	private String writeday;
+	private Timestamp writeday;
 	
 	
 	public String getNum() {
@@ -33,10 +35,11 @@ public class memoDto {
 	public void setAvata(String avata) {
 		this.avata = avata;
 	}
-	public String getWriteday() {
+	public Timestamp getWriteday() {
 		return writeday;
 	}
-	public void setWriteday(String writeday) {
+	public void setWriteday(Timestamp writeday) {
 		this.writeday = writeday;
 	}
 }
+	

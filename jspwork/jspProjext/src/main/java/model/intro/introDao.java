@@ -41,7 +41,7 @@ public class introDao {
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		
-		String sql="select * from intro";
+		String sql="select * from intro order by intro_num";
 		
 		try {
 			pstmt=conn.prepareStatement(sql);

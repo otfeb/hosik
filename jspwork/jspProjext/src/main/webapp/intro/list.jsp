@@ -23,7 +23,7 @@
 <div>
 	<h3 class="alert alert-info" style="width: 600px"></h3>
 	<br>
-	<button type="button" onclick="location.href='addForm.jsp'">상품추가</button>
+	<button type="button" onclick="location.href='addForm.jsp'">정보추가</button>
 	<br><br>
 	<table class="table table-bordered" style="width: 800px;">
 	<tr width="60">
@@ -53,8 +53,14 @@
 			
 			<tr>
 				<td align="center"><%=(i+1) %></td>
+				<td align="center" valign="middle"><%=dto.getIntro_name() %></td>
+				<td align="center" valign="middle"><%=dto.getIntro_blood() %></td>
+				<td align="center" valign="middle"><%=dto.getIntro_hp() %></td>
+				<td align="center" valign="middle"><%=dto.getIntro_city() %></td>
+				<td align="center" valign="middle"><%=dto.getGaipday() %></td>
 				<td>
-					
+					<button type="button" class="btn btn-success btn-sm" onclick="location.href=''">수정</button>
+					<button type="button" class="btn btn-danger btn-sm" onclick="location.href=''">삭제</button>
 				</td>
 			</tr>
 			

@@ -70,4 +70,23 @@ public class introDao {
 		
 		return list;
 	}
+	
+	public void deleteIntro(String intro_num) {
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		
+		String sql="delete from intro where intro_num=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, intro_num);
+			pstmt.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			db.dbClose(pstmt, conn);
+		}
+	}
 }

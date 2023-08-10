@@ -62,7 +62,7 @@
 		<tr>
 			<td colspan="2" align="center">
 				<button type="submit" class="btn btn-info">추가</button>
-				<button type="button" class="btn btn-success">목록</button>
+				<button type="button" class="btn btn-success" onclick="location.href='list.jsp'">목록</button>
 			</td>
 		</tr>
 	</table>

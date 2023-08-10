@@ -18,12 +18,11 @@
 <%
 	introDao dao=new introDao();
 	ArrayList<introDto> list=dao.selectIntro();
+	SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 %>
 
 <div>
-	<h3 class="alert alert-info" style="width: 600px"></h3>
-	<br>
-	<button type="button" onclick="location.href='addForm.jsp'">정보추가</button>
+	<button type="button" class="btn btn-info" onclick="location.href='addForm.jsp'">정보추가</button>
 	<br><br>
 	<table class="table table-bordered" style="width: 800px;">
 	<tr width="60">
@@ -45,7 +44,6 @@
 		</tr>
 	<%}
 	else{
-		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH시");
 		
 		for(int i=0;i<list.size();i++){
 			introDto dto=list.get(i);
@@ -57,10 +55,10 @@
 				<td align="center" valign="middle"><%=dto.getIntro_blood() %></td>
 				<td align="center" valign="middle"><%=dto.getIntro_hp() %></td>
 				<td align="center" valign="middle"><%=dto.getIntro_city() %></td>
-				<td align="center" valign="middle"><%=dto.getGaipday() %></td>
+				<td align="center" valign="middle"><%=sdf.format(dto.getGaipday()) %></td>
 				<td>
 					<button type="button" class="btn btn-success btn-sm" onclick="location.href=''">수정</button>
-					<button type="button" class="btn btn-danger btn-sm" onclick="location.href=''">삭제</button>
+					<button type="button" class="btn btn-danger btn-sm" onclick="location.href='deleteIntro.jsp?intro_num=<%=dto.getIntro_num()%>'">삭제</button>
 				</td>
 			</tr>
 			

@@ -13,6 +13,9 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
+<style type="text/css">
+
+</style>
 </head>
 
 <body>
@@ -62,12 +65,22 @@
 				<td align="center" valign="middle"><%=sdf.format(dto.getCdate()) %></td>
 				<td align="center" valign="middle">
 					<button type="button" class="btn btn-success btn-sm" onclick="location.href='updateForm.jsp?num=<%=dto.getNum()%>'">수정</button>
-					<button type="button" class="btn btn-danger btn-sm" onclick="location.href=''">삭제</button>
+					<button type="button" class="btn btn-danger btn-sm" onclick=del(<%=dto.getNum()%>)>삭제</button>
 				</td>
 			</tr>
 		<%}
 	}
 	%>
+	
+	<script>
+		function del(num){
+			var a=confirm("정말 삭제하겠습니까?")
+			
+			if(a){
+				location.href="deleteCar.jsp?num="+num;
+			}
+		}
+	</script>
 </div>
 </body>
 </html>

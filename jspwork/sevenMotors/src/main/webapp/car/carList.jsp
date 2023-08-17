@@ -60,8 +60,8 @@
 				<td align="center" valign="middle"><%=dto.getCid() %></td>
 				<td align="center" valign="middle"><%=dto.getDevice() %></td>
 				<td align="center" valign="middle"><%=sdf.format(dto.getCdate()) %></td>
-				<td>
-					<button type="button" class="btn btn-success btn-sm" onclick="location.href=''">수정</button>
+				<td align="center" valign="middle">
+					<button type="button" class="btn btn-success btn-sm" onclick="location.href='updateForm.jsp?num=<%=dto.getNum()%>'">수정</button>
 					<button type="button" class="btn btn-danger btn-sm" onclick="location.href=''">삭제</button>
 				</td>
 			</tr>

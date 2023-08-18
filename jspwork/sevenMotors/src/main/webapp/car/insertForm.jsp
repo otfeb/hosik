@@ -23,30 +23,30 @@
 					<b>견적등록</b>
 				</caption>
 				<tr>
-					<td style="background-color: #66cdaa" width="120">차주이름</td>
+					<td style="background-color: #d3d3d3" width="120">차주이름</td>
 					<td><input type="text" class="form-control" name="name"
 						style="width: 120px;" required="required"></td>
 				</tr>
 				<tr>
-					<td style="background-color: #66cdaa" width="120">차종</td>
+					<td style="background-color: #d3d3d3" width="120">차종</td>
 					<td><input type="text" class="form-control"
 						style="width: 120px;" name="cname" required="required"></td>
 				</tr>
 
 				<tr>
-					<td style="background-color: #66cdaa" width="120">차량번호</td>
+					<td style="background-color: #d3d3d3" width="120">차량번호</td>
 					<td><input type="text" class="form-control"
 						style="width: 120px;" name="cid" required="required"></td>
 				</tr>
 
 				<tr>
-					<td style="background-color: #66cdaa" width="120">차량이미지</td>
+					<td style="background-color: #d3d3d3" width="120">차량이미지</td>
 					<td><input type="file" class="form-control"
 						style="width: 250px;" name="uploadImage"></td>
 				</tr>
 				
 				<tr>
-					<td style="background-color: #66cdaa" width="120">부품</td>
+					<td style="background-color: #d3d3d3" width="120">부품</td>
 					<td><input type="checkbox" name="device" value="엔진오일">엔진오일
 					<input type="checkbox" name="device" value="타이어">타이어
 					<input type="checkbox" name="device" value="엔진">엔진
@@ -55,8 +55,8 @@
 
 				<tr>
 					<td colspan="2" align="center">
-						<button type="submit" class="btn btn-success">견적등록</button>
-						<button type="button" class="btn btn-warning"
+						<button type="submit" class="btn btn-outline-success">견적등록</button>
+						<button type="button" class="btn btn-outline-warning"
 							onclick="location.href='carList.jsp'">회원목록</button>
 					</td>
 				</tr>

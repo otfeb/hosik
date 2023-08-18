@@ -14,7 +14,9 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
-
+	tr:hover{
+		background-color: white;
+	}
 </style>
 </head>
 
@@ -26,9 +28,9 @@
 %>
 
 <div>
-	<button type="button" class="btn btn-info" onclick="location.href='insertForm.jsp'">차량추가</button>
+	<button type="button" class="btn btn-outline-secondary" onclick="location.href='insertForm.jsp'">차량추가</button>
 	<br><br>
-	<table class="table table-bordered" style="width: 1000px;">
+	<table class="table table-dark" style="width: 1000px;">
 	<tr width="60" align="center" class="table-active">
 		<th width="120">번호</th>
 		<th width="150">차주명</th>
@@ -52,11 +54,11 @@
 		for(int i=0;i<list.size();i++){
 			carDto dto=list.get(i);
 			%>
-			
 			<tr>
+			
 				<td align="center">
 					<b>No.<%=(i+1) %></b><br>
-					<img alt="" src="<%=dto.getCimage()%>">
+					<img alt="" src="<%=dto.getCimage()%>" style="width: 150px;">
 				</td>
 				<td align="center" valign="middle"><%=dto.getName() %></td>
 				<td align="center" valign="middle"><%=dto.getCname() %></td>
@@ -64,10 +66,12 @@
 				<td align="center" valign="middle"><%=dto.getDevice() %></td>
 				<td align="center" valign="middle"><%=sdf.format(dto.getCdate()) %></td>
 				<td align="center" valign="middle">
-					<button type="button" class="btn btn-success btn-sm" onclick="location.href='updateForm.jsp?num=<%=dto.getNum()%>'">수정</button>
-					<button type="button" class="btn btn-danger btn-sm" onclick=del(<%=dto.getNum()%>)>삭제</button>
+					<button type="button" class="btn btn-outline-success btn-sm" onclick="location.href='updateForm.jsp?num=<%=dto.getNum()%>'">수정</button>
+					<button type="button" class="btn btn-outline-danger btn-sm" onclick=del(<%=dto.getNum()%>)>삭제</button>
 				</td>
+				
 			</tr>
+
 		<%}
 	}
 	%>
